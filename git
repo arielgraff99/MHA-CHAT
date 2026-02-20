@@ -1,0 +1,79 @@
+# Deploying to GitHub Pages
+
+## Step 1: Create GitHub Repository
+
+```bash
+# Initialize git in your project folder
+cd ontario-mh-app
+git init
+git add .
+git commit -m "Initial commit: Ontario Mental Health Companion v2.0"
+```
+
+## Step 2: Create Repository on GitHub
+
+1. Go to https://github.com/new
+2. Repository name: `ontario-mental-health-companion`
+3. Set to **Public** (required for free GitHub Pages)
+4. Do NOT initialize with README (you already have one)
+5. Click "Create repository"
+
+## Step 3: Push to GitHub
+
+```bash
+git remote add origin https://github.com/arielgraff99/ontario-mental-health-companion.git
+git branch -M main
+git push -u origin main
+```
+
+## Step 4: Enable GitHub Pages
+
+1. Go to your repository on GitHub
+2. Click **Settings** (top tab)
+3. Click **Pages** (left sidebar)
+4. Under "Source": select **Deploy from a branch**
+5. Branch: `main`, Folder: `/ (root)`
+6. Click **Save**
+
+## Step 5: Access Your App
+
+After ~2 minutes, your app will be live at:
+```
+https://arielgraff99.github.io/ontario-mental-health-companion/app.html
+```
+
+Or rename `app.html` to `index.html` for the cleaner URL:
+```
+https://arielgraff99.github.io/ontario-mental-health-companion/
+```
+
+---
+
+## Renaming app.html to index.html (Recommended)
+
+```bash
+mv app.html index.html
+git add .
+git commit -m "Rename app.html to index.html for GitHub Pages"
+git push
+```
+
+---
+
+## Alternative: Netlify (Fastest)
+
+1. Go to https://app.netlify.com
+2. Drag and drop the `ontario-mh-app` folder
+3. Instant deploy — no configuration needed
+
+---
+
+## Updating the App
+
+```bash
+# Make changes to app.html or knowledge_base.js
+git add .
+git commit -m "Update: add new Q&A pairs / fix Form 4 duration"
+git push
+# GitHub Pages auto-deploys within ~1 minute
+```
